@@ -10,3 +10,23 @@ turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'cars.json';
+
+const outputDiv = document.querySelector('#output');
+
+const request = fetch(`${ENDPOINT}`);
+
+request
+    .then((res) => res.json())
+    .then((data) => {
+        const ulElement = document.createElement('ul');
+
+        data.forEach((carData) => {
+            const liElement = document.createElement('li');
+            liElement.textContent = `${carData.brand} -----
+             ${carData.models}`;
+            ulElement.append(liElement);
+        });
+
+        outputDiv.append(ulElement);
+
+    });
