@@ -17,5 +17,13 @@ const users = [
   { id: '6', name: 'Ronald Jones', age: 63, hasDog: true },
   { id: '7', name: 'Elton Smith', age: 16, hasDog: true },
   { id: '8', name: 'Simon Peterson', age: 30, hasDog: false },
-  { id: '9', name: 'Daniel Cane', age: 51, hasDog: true },
+  { id: '9', name: 'Daniel Cane', age: 51, hasDog: true }
 ];
+
+const filterDogOwners = (users) => users.filter((obj) => obj.hasDog);
+// returninam boolean todėl nereikia papildomų simbolių !!obj.hasDog arba obj.hasDog === true, kurie irgi būtų teisingas sprendimas?
+
+const filterAdults = (users) => users.filter((obj) => obj.age >= 18);
+
+console.log(filterDogOwners(users));
+console.log(filterAdults(users));
